@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>요구사항 분석 — 웹개발자 조영욱</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ── Blog Post Custom Styles ── */
+        .post-hero-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .post-meta-badge {
+            display: inline-block;
+            background: #F96D00;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 3px;
+            margin-right: 6px;
+        }
+
+        .post-meta-info {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .post-meta-info span {
+            margin-right: 18px;
+        }
+
+        .post-meta-info i {
+            margin-right: 5px;
+            color: #F96D00;
+        }
+
+        .post-divider {
+            border: none;
+            border-top: 2px solid #f0f0f0;
+            margin: 2.5rem 0;
+        }
+
+        /* Section heading inside article */
+        .article-section-title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2d2d2d;
+            padding-left: 14px;
+            border-left: 4px solid #F96D00;
+        }
+
+        .article-sub-section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        /* Highlight callout box */
+        .callout-box {
+            background: #fff8f3;
+            border-left: 5px solid #F96D00;
+            padding: 1.2rem 1.5rem;
+            border-radius: 4px;
+            margin: 1.8rem 0;
+        }
+
+        .callout-box p:last-child,
+        .callout-box ul:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Comparison table */
+        .compare-table th {
+            background-color: #2d2d2d;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .compare-table td {
+            font-size: 0.88rem;
+            vertical-align: top;
+        }
+
+        .compare-table tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        /* Step flow */
+        .step-flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+            margin: 1.2rem 0;
+        }
+
+        .step-flow .step-item {
+            background: #F96D00;
+            color: #fff;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+
+        .step-flow .step-arrow {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        /* Technique cards */
+        .technique-card {
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 1.2rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .technique-card:hover {
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .technique-card .tc-icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .technique-card h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: #2d2d2d;
+        }
+
+        .technique-card .tc-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-right: 4px;
+            margin-bottom: 6px;
+        }
+
+        .badge-pro {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .badge-con {
+            background: #fce4ec;
+            color: #c62828;
+        }
+
+        .technique-card p {
+            font-size: 0.86rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* Summary card */
+        .summary-card {
+            background: #2d2d2d;
+            color: #eee;
+            border-radius: 8px;
+            padding: 1.8rem 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .summary-card h4 {
+            color: #F96D00;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .summary-card p {
+            font-size: 0.88rem;
+            margin-bottom: 0;
+            color: #ccc;
+        }
+
+        /* Author box */
+        .author-box {
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 1.8rem;
+            margin-top: 3rem;
+        }
+
+        .author-box img {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Conversion flow */
+        .convert-flow {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .convert-flow .cf-box {
+            flex: 1;
+            padding: 1.2rem 1rem;
+            text-align: center;
+        }
+
+        .cf-user {
+            background: #e3f2fd;
+        }
+
+        .cf-arrow {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #F96D00;
+            flex: 0 0 48px;
+        }
+
+        .cf-system {
+            background: #e8f5e9;
+        }
+
+        .convert-flow .cf-box h6 {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.4rem;
+            color: #555;
+        }
+
+        .convert-flow .cf-box p {
+            font-size: 0.88rem;
+            margin-bottom: 0;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span>C</span>&nbsp;&nbsp;&nbsp;ho Young Wook</a>
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+                data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item"><a href="index.html#home-section" class="nav-link"><span>Home</span></a></li>
+                    <li class="nav-item"><a href="index.html#about-section" class="nav-link"><span>About</span></a></li>
+                    <li class="nav-item"><a href="index.html#education-section"
+                            class="nav-link"><span>Education</span></a></li>
+                    <li class="nav-item"><a href="index.html#projects-section"
+                            class="nav-link"><span>Projects</span></a></li>
+                    <li class="nav-item"><a href="index.html#side-projects-section" class="nav-link"><span>Side
+                                Projects</span></a></li>
+                    <li class="nav-item"><a href="index.html#blog-section" class="nav-link"><span>My Blog</span></a>
+                    </li>
+                    <li class="nav-item"><a href="index.html#contact-section" class="nav-link"><span>Contact</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <div class="hero-wrap js-fullheight">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
+                <div class="col-lg-10 ftco-animate d-flex align-items-center">
+                    <div class="text text-center">
+                        <h1 class="mb-3 bread">요구사항 분석</h1>
+                        <p class="breadcrumbs">
+                            <span class="mr-2"><a href="index.html">Home <i
+                                        class="ion-ios-arrow-forward"></i></a></span>
+                            <span class="mr-2"><a href="index.html#blog-section">Blog <i
+                                        class="ion-ios-arrow-forward"></i></a></span>
+                            <span>요구사항 분석 <i class="ion-ios-arrow-forward"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+
+                <!-- ── Article ── -->
+                <div class="col-lg-8 ftco-animate">
+
+                    <!-- Post Header -->
+                    <div class="mb-4">
+                        <span class="post-meta-badge">Requirements</span>
+                        <span class="post-meta-badge" style="background:#333;">분석·설계</span>
+                        <h2 class="post-hero-title mt-3 mb-2">
+                            요구사항 분석 — 설계의 밑바탕, 프로젝트 성공의 출발점
+                        </h2>
+                        <p class="post-meta-info">
+                            <span><i class="icon-calendar"></i> February 15, 2026</span>
+                            <span><i class="icon-person"></i> 조영욱</span>
+                            <span><i class="icon-folder-open"></i> Engineering</span>
+                        </p>
+                    </div>
+
+                    <hr class="post-divider">
+
+                    <!-- ─────────────────────────────────────────────── -->
+                    <!-- 도입                                            -->
+                    <!-- ─────────────────────────────────────────────── -->
+                    <p>
+                        개발을 시작하기 전, 반드시 짚고 넘어가야 할 단계가 있습니다.
+                        바로 <strong>요구사항 분석(Requirements Analysis)</strong>입니다.
+                        설계를 잘 하려면, 먼저 무엇을 만들어야 하는지 정확히 이해해야 합니다.
+                        요구사항 분석은 그 이해의 과정이며, 이후 모든 설계와 구현의 <em>밑바탕</em>이 됩니다.
+                    </p>
+
+                    <div class="callout-box">
+                        <p>
+                            <strong>왜 중요한가?</strong><br>
+                            아무리 뛰어난 개발자와 설계자가 모여도, 무엇을 만들어야 하는지가 명확하지 않다면
+                            프로젝트는 실패할 수밖에 없습니다.
+                            요구사항 분석은 팀 전체가 같은 방향을 바라보게 만드는 나침반입니다.
+                        </p>
+                    </div>
+
+                    <hr class="post-divider">
+
+                    <!-- ─────────────────────────────────────────────── -->
+                    <!-- 1. 요구사항의 두 가지 유형                      -->
+                    <!-- ─────────────────────────────────────────────── -->
+                    <h3 class="article-section-title">요구사항의 두 가지 유형</h3>
+
+                    <p>
+                        요구사항은 크게 두 가지로 나뉩니다.
+                        <strong>사용자 요구사항</strong>과 <strong>시스템 요구사항</strong>입니다.
+                        이 둘의 차이를 명확히 이해하는 것이 요구사항 분석의 핵심입니다.
+                    </p>
+
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered compare-table">
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>사용자 요구사항</th>
+                                    <th>시스템 요구사항</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>표현 방식</strong></td>
+                                    <td>사용자 관점, 자연어</td>
+                                    <td>기술적 관점, 구체적 명세</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>예시</strong></td>
+                                    <td>"알림을 받고 싶어요"</td>
+                                    <td>"5초 이내 Push 알림 발송"</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>목적</strong></td>
+                                    <td>니즈 전달</td>
+                                    <td>실제 구현과 테스트 기준</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>작성 대상</strong></td>
+                                    <td>고객, 비즈니스 담당자</td>
+                                    <td>개발팀, 테스트팀, 인프라팀</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- ── 사용자 요구사항 ── -->
+                    <h4 class="article-sub-section-title">👥 사용자 요구사항 (User Requirements)</h4>
+                    <p>
+                        사용자 요구사항은 최종 사용자나 고객이 필요로 하는 기능이나 서비스입니다.
+                        기술적인 용어나 구현 방식을 모르는 경우가 많으며,
+                        <em>자신의 목적과 기대</em>를 중심으로 자연어로 표현됩니다.
+                        이 때문에 다소 모호하거나 추상적일 수 있습니다.
+                    </p>
+                    <div class="callout-box">
+                        <p><strong>예시</strong></p>
+                        <ul class="mb-0">
+                            <li>"이체가 완료되면 알림을 받고 싶어요."</li>
+                            <li>"로그인 없이도 상품을 조회할 수 있으면 좋겠어요."</li>
+                        </ul>
+                    </div>
+
+                    <!-- ── 시스템 요구사항 ── -->
+                    <h4 class="article-sub-section-title">⚙️ 시스템 요구사항 (System Requirements)</h4>
+                    <p>
+                        시스템 요구사항은 사용자 요구를 기반으로 <em>실제로 어떻게 구현할지</em>를 정의한 것입니다.
+                        개발자·디자이너·테스트 엔지니어가 참고할 수 있도록 기술적이고 상세하게 작성되며,
+                        구체적인 기능, 성능, 보안, 인터페이스, 제약 조건을 포함합니다.
+                    </p>
+                    <div class="callout-box">
+                        <p><strong>예시</strong></p>
+                        <ul class="mb-0">
+                            <li>"이체 완료 시, 5초 이내에 Push 알림을 발송한다."</li>
+                            <li>"비회원 상태에서는 상품 조회 API 호출만 허용한다."</li>
+                        </ul>
+                    </div>
+
+                    <!-- ── 변환 과정 ── -->
+                    <h4 class="article-sub-section-title">🔄 변환 과정의 중요성</h4>
+                    <p>
+                        사용자는 "이런 기능이 필요해요"라고 쉽게 말하지만,
+                        이를 실제 시스템에 반영하려면 <strong>명확한 기준</strong>과 <strong>실행 가능한 형태</strong>로 바꿔야 합니다.
+                    </p>
+
+                    <div class="convert-flow">
+                        <div class="cf-box cf-user">
+                            <h6>사용자 요구사항</h6>
+                            <p>"이체 완료 시 알림을 받고 싶어요."</p>
+                        </div>
+                        <div class="cf-arrow">
+                            <i class="ion-ios-arrow-forward"></i>
+                        </div>
+                        <div class="cf-box cf-system">
+                            <h6>시스템 요구사항</h6>
+                            <p>"이체 완료 후 5초 이내 Push 알림 발송"</p>
+                        </div>
+                    </div>
+
+                    <p>
+                        이 변환 과정에서 <strong>요구사항 분석가, 기획자, 개발자 간의 협업</strong>이 매우 중요합니다.
+                        해석의 차이가 생기면 잘못된 시스템이 만들어질 수 있기 때문입니다.
+                    </p>
+
+                    <hr class="post-divider">
+
+                    <!-- ─────────────────────────────────────────────── -->
+                    <!-- 2. 요구사항 수집 기법                           -->
+                    <!-- ─────────────────────────────────────────────── -->
+                    <h3 class="article-section-title">요구사항 수집 — 프로젝트 성공의 출발점</h3>
+
+                    <p>
+                        단순히 "필요한 거 말씀해 주세요"라고 묻는 것만으로는 부족합니다.
+                        체계적이고 다양한 기법을 활용해야 명확하고 구체적인 요구사항을 얻을 수 있습니다.
+                        대표적인 수집 기법 5가지를 소개합니다.
+                    </p>
+
+                    <!-- 1. 인터뷰 -->
+                    <div class="technique-card">
+                        <div class="tc-icon">🗣️</div>
+                        <h5>1. 인터뷰 (Interview)</h5>
+                        <span class="tc-badge badge-pro">장점: 심층적인 니즈 파악</span>
+                        <span class="tc-badge badge-con">단점: 시간·인력 소요</span>
+                        <p>이해관계자와 직접 만나 질문하고 답변을 듣는 방식입니다.
+                            정성적인 인사이트를 얻기에 가장 효과적이며, 숨겨진 니즈를 발굴할 수 있습니다.</p>
+                    </div>
+
+                    <!-- 2. 설문조사 -->
+                    <div class="technique-card">
+                        <div class="tc-icon">📊</div>
+                        <h5>2. 설문조사 (Survey)</h5>
+                        <span class="tc-badge badge-pro">장점: 정량적 데이터 확보</span>
+                        <span class="tc-badge badge-con">단점: 질문 설계가 관건</span>
+                        <p>많은 사람들의 의견을 빠르게 수집할 수 있는 방식입니다.
+                            질문 설계가 부실하면 의미 없는 데이터만 수집되므로, 질문 구성에 신중해야 합니다.</p>
+                    </div>
+
+                    <!-- 3. 워크숍 -->
+                    <div class="technique-card">
+                        <div class="tc-icon">💼</div>
+                        <h5>3. 워크숍 (Workshop)</h5>
+                        <span class="tc-badge badge-pro">장점: 의견 조율·아이디어 도출</span>
+                        <span class="tc-badge badge-con">단점: 퍼실리테이터 역할 중요</span>
+                        <p>여러 이해관계자가 한자리에 모여 의견을 나누는 방식입니다.
+                            논의가 산으로 가지 않도록 퍼실리테이터(Facilitator)의 역할이 매우 중요합니다.</p>
+                    </div>
+
+                    <!-- 4. 관찰 -->
+                    <div class="technique-card">
+                        <div class="tc-icon">👀</div>
+                        <h5>4. 관찰 (Observation)</h5>
+                        <span class="tc-badge badge-pro">장점: 사용자 미인식 문제 발견</span>
+                        <span class="tc-badge badge-con">단점: 시간 소요, 해석 주관 개입</span>
+                        <p>실제 시스템 사용 패턴을 직접 지켜보는 방법입니다.
+                            사용자 스스로도 인지하지 못했던 불편함이나 문제점을 발견할 수 있는 강력한 기법입니다.</p>
+                    </div>
+
+                    <!-- 5. 문서 분석 -->
+                    <div class="technique-card">
+                        <div class="tc-icon">📄</div>
+                        <h5>5. 문서 분석 (Document Analysis)</h5>
+                        <span class="tc-badge badge-pro">장점: 빠른 기본 정보 파악</span>
+                        <span class="tc-badge badge-con">단점: 최신 정보 미반영 가능성</span>
+                        <p>기존 시스템 문서, 매뉴얼, 보고서를 분석해 요구사항을 도출합니다.
+                            신규 프로젝트보다 레거시 시스템 전환이나 고도화 작업 시 특히 유용합니다.</p>
+                    </div>
+
+                    <div class="callout-box mt-4">
+                        <p>
+                            <strong>기법 조합이 핵심입니다.</strong><br>
+                            이 외에도 프로토타입 제작, 브레인스토밍 같은 기법들이 있습니다.
+                            하나의 기법만 고집하기보다는 상황과 목적에 맞게 <em>다양한 수집 방법을 병행</em>하여
+                            보다 정확하고 풍부한 요구사항을 확보하는 것이 핵심입니다.
+                        </p>
+                    </div>
+
+                    <hr class="post-divider">
+
+                    <!-- ─────────────────────────────────────────────── -->
+                    <!-- 3. 정리 요약                                    -->
+                    <!-- ─────────────────────────────────────────────── -->
+                    <h3 class="article-section-title">정리</h3>
+
+                    <div class="row mt-3">
+                        <div class="col-md-6 mb-3">
+                            <div class="summary-card">
+                                <h4>사용자 요구사항</h4>
+                                <p>자연어 · 고객 관점<br>니즈와 기대를 전달하는 출발점</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="summary-card">
+                                <h4>시스템 요구사항</h4>
+                                <p>기술적 명세 · 개발·테스트 기준<br>구현 가능한 형태로 변환된 결과물</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mt-4">
+                        요구사항 분석은 단순히 "리스트 만들기"가 아닙니다.
+                        사용자의 언어를 시스템의 언어로 번역하는 과정이며,
+                        이 과정이 정교할수록 설계의 품질이 높아지고 개발 중 발생하는
+                        <strong>재작업(Rework) 비용을 획기적으로 줄일 수 있습니다.</strong>
+                        설계를 잘 하고 싶다면, 먼저 요구사항을 제대로 정의하는 것에서 시작하세요.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="tag-widget post-tag-container mb-5 mt-5">
+                        <div class="tagcloud">
+                            <a href="#" class="tag-cloud-link">Requirements</a>
+                            <a href="#" class="tag-cloud-link">분석·설계</a>
+                            <a href="#" class="tag-cloud-link">사용자요구사항</a>
+                            <a href="#" class="tag-cloud-link">시스템요구사항</a>
+                            <a href="#" class="tag-cloud-link">인터뷰</a>
+                            <a href="#" class="tag-cloud-link">워크숍</a>
+                            <a href="#" class="tag-cloud-link">Engineering</a>
+                        </div>
+                    </div>
+
+                    <!-- Author Box -->
+                    <div class="author-box d-flex align-items-start">
+                        <img src="images/about.jpg" alt="조영욱" class="mr-4">
+                        <div>
+                            <h4 class="mb-1" style="font-size:1.05rem; font-weight:700;">조영욱 — Web Developer</h4>
+                            <p class="mb-0" style="font-size:0.88rem; color:#777;">
+                                백엔드·프론트엔드 경험을 기반으로 더 나은 소프트웨어 구조를 고민합니다.
+                                개발 과정에서 배운 것들을 이 블로그에 기록합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end .col-lg-8 -->
+
+                <!-- ── Sidebar ── -->
+                <div class="col-lg-4 sidebar ftco-animate">
+
+                    <div class="sidebar-box">
+                        <form action="#" class="search-form">
+                            <div class="form-group">
+                                <span class="icon icon-search"></span>
+                                <input type="text" class="form-control" placeholder="Search...">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="sidebar-box ftco-animate">
+                        <h3 class="heading-sidebar">Categories</h3>
+                        <ul class="categories">
+                            <li><a href="#">Engineering <span>(2)</span></a></li>
+                            <li><a href="#">Architecture <span>(0)</span></a></li>
+                            <li><a href="#">DevOps <span>(0)</span></a></li>
+                            <li><a href="#">Career <span>(0)</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-box ftco-animate">
+                        <h3 class="heading-sidebar">Recent Blog</h3>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+                            <div class="text">
+                                <h3 class="heading">
+                                    <a href="blog1.html">소프트웨어 개발 방법론 — SDLC부터 하이브리드까지</a>
+                                </h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> February 15, 2026</a></div>
+                                    <div><a href="#"><span class="icon-person"></span> 조영욱</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg);"></a>
+                            <div class="text">
+                                <h3 class="heading">
+                                    <a href="blog2.html">요구사항 분석 — 설계의 밑바탕</a>
+                                </h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> February 15, 2026</a></div>
+                                    <div><a href="#"><span class="icon-person"></span> 조영욱</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-box ftco-animate">
+                        <h3 class="heading-sidebar">Tag Cloud</h3>
+                        <div class="tagcloud">
+                            <a href="#" class="tag-cloud-link">SDLC</a>
+                            <a href="#" class="tag-cloud-link">Agile</a>
+                            <a href="#" class="tag-cloud-link">Requirements</a>
+                            <a href="#" class="tag-cloud-link">Waterfall</a>
+                            <a href="#" class="tag-cloud-link">분석</a>
+                            <a href="#" class="tag-cloud-link">설계</a>
+                            <a href="#" class="tag-cloud-link">Engineering</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-box ftco-animate">
+                        <h3 class="heading-sidebar">About</h3>
+                        <p style="font-size:0.88rem;">
+                            웹 개발자 조영욱의 기술 블로그입니다.
+                            개발 방법론, 아키텍처, 실무 경험 등 개발자로서 배운 것들을 기록합니다.
+                        </p>
+                    </div>
+
+                </div>
+                <!-- end sidebar -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved. Created by
+                        YoungWook.
+                        | template with by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+        </svg>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

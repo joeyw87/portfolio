@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>소프트웨어 개발 방법론 — 웹개발자 조영욱</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ── Blog Post Custom Styles ── */
+        .post-hero-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .post-meta-badge {
+            display: inline-block;
+            background: #F96D00;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 3px;
+            margin-right: 6px;
+        }
+
+        .post-meta-info {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .post-meta-info span {
+            margin-right: 18px;
+        }
+
+        .post-meta-info i {
+            margin-right: 5px;
+            color: #F96D00;
+        }
+
+        .post-divider {
+            border: none;
+            border-top: 2px solid #f0f0f0;
+            margin: 2.5rem 0;
+        }
+
+        /* Section heading inside article */
+        .article-section-title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2d2d2d;
+            padding-left: 14px;
+            border-left: 4px solid #F96D00;
+        }
+
+        .article-sub-section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        /* Highlight callout box */
+        .callout-box {
+            background: #fff8f3;
+            border-left: 5px solid #F96D00;
+            padding: 1.2rem 1.5rem;
+            border-radius: 4px;
+            margin: 1.8rem 0;
+        }
+
+        .callout-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Comparison table */
+        .compare-table th {
+            background-color: #2d2d2d;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .compare-table td {
+            font-size: 0.88rem;
+            vertical-align: top;
+        }
+
+        .compare-table tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        /* Model flow steps */
+        .step-flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+            margin: 1.2rem 0;
+        }
+
+        .step-flow .step-item {
+            background: #F96D00;
+            color: #fff;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+
+        .step-flow .step-arrow {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        /* Summary card */
+        .summary-card {
+            background: #2d2d2d;
+            color: #eee;
+            border-radius: 8px;
+            padding: 1.8rem 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .summary-card h4 {
+            color: #F96D00;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .summary-card p {
+            font-size: 0.88rem;
+            margin-bottom: 0;
+            color: #ccc;
+        }
+
+        /* Author box */
+        .author-box {
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 1.8rem;
+            margin-top: 3rem;
+        }
+
+        .author-box img {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .back-to-top-btn {
+            font-size: 0.82rem;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span>C</span>&nbsp;&nbsp;&nbsp;ho Young Wook</a>
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+                data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item"><a href="index.html#home-section" class="nav-link"><span>Home</span></a></li>
+                    <li class="nav-item"><a href="index.html#about-section" class="nav-link"><span>About</span></a></li>
+                    <li class="nav-item"><a href="index.html#education-section"
+                            class="nav-link"><span>Education</span></a></li>
+                    <li class="nav-item"><a href="index.html#projects-section"
+                            class="nav-link"><span>Projects</span></a></li>
+                    <li class="nav-item"><a href="index.html#side-projects-section" class="nav-link"><span>Side
+                                Projects</span></a></li>
+                    <li class="nav-item"><a href="index.html#blog-section" class="nav-link"><span>My Blog</span></a>
+                    </li>
+                    <li class="nav-item"><a href="index.html#contact-section" class="nav-link"><span>Contact</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <div class="hero-wrap js-fullheight">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
+                <div class="col-lg-10 ftco-animate d-flex align-items-center">
+                    <div class="text text-center">
+                        <h1 class="mb-3 bread">소프트웨어 개발 방법론</h1>
+                        <p class="breadcrumbs">
+                            <span class="mr-2"><a href="index.html">Home <i
+                                        class="ion-ios-arrow-forward"></i></a></span>
+                            <span class="mr-2"><a href="index.html#blog-section">Blog <i
+                                        class="ion-ios-arrow-forward"></i></a></span>
+                            <span>소프트웨어 개발 방법론 <i class="ion-ios-arrow-forward"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+
+                <!-- ── Article ── -->
+                <div class="col-lg-8 ftco-animate">
+
+                    <!-- Post Header -->
+                    <div class="mb-4">
+                        <span class="post-meta-badge">SDLC</span>
+                        <span class="post-meta-badge" style="background:#333;">방법론</span>
+                        <h2 class="post-hero-title mt-3 mb-2">
+                            소프트웨어 개발 방법론 — SDLC부터 애자일, 하이브리드까지
+                        </h2>
+                        <p class="post-meta-info">
+                            <span><i class="icon-calendar"></i> August 9, 2025</span>
+                            <span><i class="icon-person"></i> 조영욱</span>
+                            <span><i class="icon-folder-open"></i> Engineering</span>
+                        </p>
+                    </div>
+
+                    <hr class="post-divider">
+
+                    <!-- ─────────────────────────────────────────────── -->
+                    <!-- 1. SDLC 개요                                    -->
+                    <!-- ─────────────────────────────────────────────── -->
+                    <h3 class="article-section-title">SDLC란 무엇인가?</h3>
+
+                    <p>
+                        우리가 시스템을 개발할 때는 단순히 코드를 작성하는 것만으로 프로젝트가 완성되지 않습니다.
+                        실제로는 프로젝트의 시작부터 끝까지 다양한 단계들이 순차적으로 진행되며,
+                        그 전체 과정을 구조화해 놓은 것이 바로 <strong>SDLC (Software Development Life Cycle)</strong>, 즉 소프트웨어 개발
+                        생명주기입니다.
+                    </p>
+
+                    <p>
+                        말 그대로 소프트웨어가 기획되고, 개발되며, 배포되고
+                        유지되는 전 과정을 체계적으로 정의한 프로세스입니다.
+                        이 주기의 핵심은 단순히 개발만을 다루는 것이 아니라,
+                        그보다 앞선 <em>요구사항 분석, 설계 단계</em>, 그리고 후속 단계인 <em>테스트, 운영 및 유지보수</em>까지
+                        모두 포함한다는 점입니다.
+                    </p>
+
+                    <div class="callout-box">
+                        <p>
+                            <strong>핵심 포인트:</strong> 무작정 코딩부터 시작하지 않는다.<br>
+                            사용자·조직이 필요로 하는 기능과 해결해야 할 문제를 먼저 분석하고 요구사항을 명확히 한 뒤,
+                            구조를 설계하고, 적절한 기술로 구현하고, 테스트와 검증을 거쳐 운영에 들어가야 합니다.
+                        </p>
+                    </div>
+
+                    <p>
+                        SDLC는 개발 과정을 단계별로 분리하여
+                        <strong>예측 가능하고, 관리 가능하며, 재사용 가능한</strong> 개발 방식을 만들어줍니다.
+                        소프트웨어 분석·설계를 잘 하기 위한 첫걸음은 바로 이 SDLC를 정확히 이해하는 것입니다.
+                    </p>
+
+                    <!-- SDLC 단계 흐름 -->
+                    <div class="step-flow">
+                        <span class="step-item">요구사항 분석</span>
+                        <span class="step-arrow"><i class="ion-ios-arrow-forward"></i></span>
+                        <span class="step-item">설계</span>
+                        <span class="step-arrow"><i class="ion-ios-arrow-forward"></i></span>
+                        <span class="step-item">구현</span>
+                        <span class="step-arrow"><i class="ion-ios-arrow-forward"></i></span>
+                        <span class="step-item">테스트</span>
+                        <span class="step-arrow"><i class="ion-ios-arrow-forward"></i></span>
+                        <span class="step-item">배포</span>
+                        <span class="step-arrow"><i class="ion-ios-arrow-forward"></i></span>
+                        <span class="step-item">유지보수</span>
+                    </div>
+
+                    <hr class="post-divider">
+
+                    <!-- ─────────────────────────────────────────────── -->
+                    <!-- 2. 워터폴 모델                                  -->
+                    <!-- ─────────────────────────────────────────────── -->
+                    <h3 class="article-section-title">Waterfall Model — 폭포수 모델</h3>
+
+                    <p>
+                        전통적인 개발 방식인 <strong>워터폴(Waterfall) 모델</strong>은 '폭포수 방식'이라고도 불립니다.
+                        물이 위에서 아래로 흐르듯, 각 개발 단계를 <em>순차적(Sequential)</em>으로 진행합니다.
+                        즉, 요구사항 정의 → 설계 → 구현 → 테스트 → 배포 및 유지보수로 이어지는 구조입니다.
+                    </p>
+
+                    <p>
+                        각 단계는 독립적으로 진행되며, <strong>이전 단계가 완전히 완료</strong>되어야 다음 단계로 넘어갈 수 있습니다.
+                        업무 분장이 명확하고, 문서화 중심의 체계적인 개발에 적합한 방식입니다.
+                    </p>
+
+                    <p>
+                        <img src="images/image_1.jpg" alt="Waterfall Model" class="img-fluid rounded">
+                    </p>
+
+                    <h4 class="article-sub-section-title">✅ 장점</h4>
+                    <ul>
+                        <li>단계별 역할 분담이 명확해 대규모 팀에서 협업이 용이</li>
+                        <li>문서 기반 접근으로 프로젝트 추적성이 높음</li>
+                        <li>요구사항이 확정된 경우 예측 가능한 일정 관리 가능</li>
+                    </ul>
+
+                    <h4 class="article-sub-section-title">❌ 단점</h4>
+                    <ul>
+                        <li>프로젝트 초기에 모든 것을 고정하기 때문에 <strong>요구사항 변경에 매우 취약</strong></li>
+                        <li>중간에 문제 발생 시 이전 단계로 돌아가는 데 시간·비용이 크게 소모</li>
+                        <li>출시 시점에 고객 니즈가 변해 결과물이 쓸모없어지는 경우 발생</li>
+                    </ul>
+
+                    <hr class="post-divider">
+
+                    <!-- ─────────────────────────────────────────────── -->
+                    <!-- 3. 애자일 모델                                  -->
+                    <!-- ─────────────────────────────────────────────── -->
+                    <h3 class="article-section-title">Agile Model — 애자일 모델</h3>
+
+                    <p>
+                        워터폴 모델의 한계를 극복하기 위해 등장한 것이 <strong>Agile 모델</strong>입니다.
+                        'Agile'은 <em>민첩한, 유연한</em>이라는 의미로,
+                        변화에 빠르게 대응하는 것을 전제로 합니다.
+                    </p>
+
+                    <p>
+                        애자일에서는 짧은 개발 주기(보통 1~4주)를 기준으로
+                        <strong>계획 → 설계 → 개발 → 테스트 → 배포</strong>를 반복합니다.
+                        이 반복 주기를 우리는 흔히 <strong>스프린트(Sprint)</strong>라고 부릅니다.
+                    </p>
+
+                    <p>
+                        <img src="images/image_2.jpg" alt="Agile Sprint Cycle" class="img-fluid rounded">
+                    </p>
+
+                    <h4 class="article-sub-section-title">스크럼(Scrum)</h4>
+                    <p>
+                        대표적인 애자일 방법론 중 하나가 <strong>스크럼</strong>입니다.
+                        스크럼에서는 팀이 자율적으로 계획을 수립하고,
+                        <em>매일 스탠드업 미팅(Daily Standup)</em>을 통해 진행 상황을 공유하며,
+                        스프린트가 끝난 뒤 <em>리뷰(Review)</em>와 <em>회고(Retrospective)</em>를 통해 지속적으로 프로세스를 개선합니다.
+                    </p>
+
+                    <div class="callout-box">
+                        <p>
+                            <strong>왜 애자일인가?</strong><br>
+                            모든 기능을 처음부터 확정짓지 않고, 사용자의 피드백을 빠르게 반영하면서 제품을 <em>점진적으로 개선</em>할 수 있습니다.
+                            특히 시장 환경이나 기술 트렌드가 빠르게 변하는 상황에서 애자일은 훨씬 더 적합한 접근 방식이 됩니다.
+                        </p>
+                    </div>
+
+                    <h4 class="article-sub-section-title">✅ 장점</h4>
+                    <ul>
+                        <li>변화하는 요구사항에 빠르게 대응 가능</li>
+                        <li>사용자 피드백을 조기에 반영해 고객 만족도 향상</li>
+                        <li>짧은 주기로 동작하는 소프트웨어를 지속적으로 제공</li>
+                    </ul>
+
+                    <h4 class="article-sub-section-title">❌ 단점</h4>
+                    <ul>
+                        <li>명확한 최종 범위가 없어 프로젝트 비용·일정 예측이 어려울 수 있음</li>
+                        <li>팀원 자율성과 커뮤니케이션 역량이 높아야 효과 발휘</li>
+                        <li>문서화 수준이 낮아 규정·감사 대응이 필요한 환경에 불리</li>
+                    </ul>
+
+                    <hr class="post-divider">
+
+                    <!-- ─────────────────────────────────────────────── -->
+                    <!-- 4. 하이브리드 모델                              -->
+                    <!-- ─────────────────────────────────────────────── -->
+                    <h3 class="article-section-title">Hybrid Agile — 하이브리드 모델</h3>
+
+                    <p>
+                        전통적인 폭포수 모델의 <em>구조적 장점</em>과 애자일의 <em>민첩성·유연성</em>을 결합한 방식이
+                        <strong>하이브리드 애자일 모델</strong>입니다.
+                    </p>
+
+                    <p>
+                        프로젝트 초반에는 워터폴 방식으로 <em>기획, 분석, 설계</em>를 진행합니다.
+                        즉, 요구사항을 문서화하고 기본 아키텍처를 어느 정도 정의해 둡니다.
+                        그 이후에는 애자일 방식으로 <em>반복적이고 점진적인</em> 개발과 테스트를 수행합니다.
+                    </p>
+
+                    <p>
+                        <img src="images/image_3.jpg" alt="Hybrid Agile Model" class="img-fluid rounded">
+                    </p>
+
+                    <h4 class="article-sub-section-title">실제 사례 — 금융권 모바일 앱 개발</h4>
+                    <ul>
+                        <li><strong>초반(Waterfall 파트):</strong> 요구사항 문서화, 아키텍처 설계, 데이터 구조 정의</li>
+                        <li><strong>개발(Agile 파트):</strong> 스프린트로 화면 설계 → 기능 단위 개발 → 테스트 반복</li>
+                        <li><strong>각 마일스톤:</strong> 고객 피드백 수렴 및 결과물 검토</li>
+                    </ul>
+
+                    <h4 class="article-sub-section-title">✅ 하이브리드의 3가지 강점</h4>
+                    <ol>
+                        <li>
+                            <strong>관리 가능성 + 유연성</strong> — 초기 명확한 계획으로 체계적으로 접근하면서,
+                            이후 개발 단계에서는 변화하는 요구에 민첩하게 대응
+                        </li>
+                        <li>
+                            <strong>문서화 + 반복 개발 병행</strong> — 빠른 스프린트를 유지하면서도
+                            회의록·요구사항 명세서·설계서 등 필수 문서를 충분히 확보해 추적성과 관리 효율 향상
+                        </li>
+                        <li>
+                            <strong>고객 만족도 향상</strong> — 정기적으로 결과물을 제공하고 피드백을 신속히 반영해
+                            사용자 중심의 개발 실현
+                        </li>
+                    </ol>
+
+                    <div class="callout-box">
+                        <p>
+                            <strong>어떤 경우에 적합한가?</strong>
+                        </p>
+                        <ul class="mb-0">
+                            <li>요구사항은 어느 정도 명확하지만 중간중간 변경 가능성이 있는 프로젝트</li>
+                            <li>외부 감사·규제 대응을 위해 문서화가 반드시 필요한 경우</li>
+                            <li>대기업·금융권처럼 조직 체계는 보수적이지만 시장 대응은 민첩해야 하는 경우</li>
+                        </ul>
+                    </div>
+
+                    <hr class="post-divider">
+
+                    <!-- ─────────────────────────────────────────────── -->
+                    <!-- 5. 비교 테이블                                  -->
+                    <!-- ─────────────────────────────────────────────── -->
+                    <h3 class="article-section-title">세 모델 한눈에 비교</h3>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered compare-table">
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>Waterfall</th>
+                                    <th>Agile</th>
+                                    <th>Hybrid</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>진행 방식</strong></td>
+                                    <td>순차적 단계별</td>
+                                    <td>반복 스프린트</td>
+                                    <td>초반 계획 + 이후 스프린트</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>변경 대응</strong></td>
+                                    <td>매우 어려움</td>
+                                    <td>유연하게 대응</td>
+                                    <td>중간 수준</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>문서화</strong></td>
+                                    <td>강함</td>
+                                    <td>약함</td>
+                                    <td>균형 있음</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>고객 피드백</strong></td>
+                                    <td>최종 납품 후</td>
+                                    <td>스프린트마다</td>
+                                    <td>마일스톤·스프린트마다</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>적합한 프로젝트</strong></td>
+                                    <td>정부·대형 SI</td>
+                                    <td>스타트업·모바일 앱</td>
+                                    <td>금융·대기업 신규 서비스</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- ─────────────────────────────────────────────── -->
+                    <!-- 6. 마무리 요약                                  -->
+                    <!-- ─────────────────────────────────────────────── -->
+                    <div class="row mt-3">
+                        <div class="col-md-4 mb-3">
+                            <div class="summary-card">
+                                <h4>Waterfall</h4>
+                                <p>계획 중심 · 문서 기반<br>단계별 완료 후 다음 진행</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="summary-card">
+                                <h4>Agile</h4>
+                                <p>반복 중심 · 유연한 대응<br>고객 피드백 상시 반영</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="summary-card">
+                                <h4>Hybrid</h4>
+                                <p>현실과 이상의 균형<br>구조 + 민첩성 동시 확보</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mt-4">
+                        각 방식은 저마다의 장단점을 가지고 있기 때문에,
+                        프로젝트의 성격, 팀 구성, 고객 요구의 불확실성 수준에 따라 적절히 선택해야 합니다.
+                        중요한 것은 방법론 자체가 목적이 아니라,
+                        <strong>팀이 더 나은 소프트웨어를 더 스마트하게 만들어 나가는 수단</strong>이라는 점입니다.
+                    </p>
+
+                    <!-- Tags -->
+                    <div class="tag-widget post-tag-container mb-5 mt-5">
+                        <div class="tagcloud">
+                            <a href="#" class="tag-cloud-link">SDLC</a>
+                            <a href="#" class="tag-cloud-link">Waterfall</a>
+                            <a href="#" class="tag-cloud-link">Agile</a>
+                            <a href="#" class="tag-cloud-link">Scrum</a>
+                            <a href="#" class="tag-cloud-link">Hybrid</a>
+                            <a href="#" class="tag-cloud-link">방법론</a>
+                            <a href="#" class="tag-cloud-link">Engineering</a>
+                        </div>
+                    </div>
+
+                    <!-- Author Box -->
+                    <div class="author-box d-flex align-items-start">
+                        <img src="images/about.jpg" alt="조영욱" class="mr-4">
+                        <div>
+                            <h4 class="mb-1" style="font-size:1.05rem; font-weight:700;">조영욱 — Web Developer</h4>
+                            <p class="mb-0" style="font-size:0.88rem; color:#777;">
+                                백엔드·프론트엔드 경험을 기반으로 더 나은 소프트웨어 구조를 고민합니다.
+                                개발 과정에서 배운 것들을 이 블로그에 기록합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end .col-lg-8 -->
+
+                <!-- ── Sidebar ── -->
+                <div class="col-lg-4 sidebar ftco-animate">
+
+                    <div class="sidebar-box">
+                        <form action="#" class="search-form">
+                            <div class="form-group">
+                                <span class="icon icon-search"></span>
+                                <input type="text" class="form-control" placeholder="Search...">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="sidebar-box ftco-animate">
+                        <h3 class="heading-sidebar">Categories</h3>
+                        <ul class="categories">
+                            <li><a href="#">Engineering <span>(1)</span></a></li>
+                            <li><a href="#">Architecture <span>(0)</span></a></li>
+                            <li><a href="#">DevOps <span>(0)</span></a></li>
+                            <li><a href="#">Career <span>(0)</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-box ftco-animate">
+                        <h3 class="heading-sidebar">Recent Blog</h3>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+                            <div class="text">
+                                <h3 class="heading">
+                                    <a href="blog1.html">소프트웨어 개발 방법론 — SDLC부터 하이브리드까지</a>
+                                </h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> August 9, 2025</a></div>
+                                    <div><a href="#"><span class="icon-person"></span> 조영욱</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-box ftco-animate">
+                        <h3 class="heading-sidebar">Tag Cloud</h3>
+                        <div class="tagcloud">
+                            <a href="#" class="tag-cloud-link">SDLC</a>
+                            <a href="#" class="tag-cloud-link">Agile</a>
+                            <a href="#" class="tag-cloud-link">Waterfall</a>
+                            <a href="#" class="tag-cloud-link">Scrum</a>
+                            <a href="#" class="tag-cloud-link">Sprint</a>
+                            <a href="#" class="tag-cloud-link">Engineering</a>
+                            <a href="#" class="tag-cloud-link">Hybrid</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-box ftco-animate">
+                        <h3 class="heading-sidebar">About</h3>
+                        <p style="font-size:0.88rem;">
+                            웹 개발자 조영욱의 기술 블로그입니다.
+                            개발 방법론, 아키텍처, 실무 경험 등 개발자로서 배운 것들을 기록합니다.
+                        </p>
+                    </div>
+
+                </div>
+                <!-- end sidebar -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved. Created by
+                        YoungWook.
+                        | template with by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+        </svg>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
